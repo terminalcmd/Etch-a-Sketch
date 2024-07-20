@@ -1,21 +1,25 @@
+body{
+    background-color: black;
+    color: white;
+}
 .container{
-    width: 400px;
-    height: 400px;
+    width: 600px;
+    height: 600px;
     border:1px solid;
     margin:0 auto;
     display: flex;
     flex-wrap: wrap;
     margin-top:5px;
+    background-color: white;
     
 }
 .newdivs{
-    border:1px solid;
     box-sizing: border-box;
-
 }
 .for-button{
     display: flex;
     justify-content: center;
+    font-size:1.5rem;
 }
 div button{
     padding: 10px;

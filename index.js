@@ -1,5 +1,6 @@
 const containerDiv = document.querySelector('.container')
-const button = document.querySelector('button')
+const input = document.querySelector('#grid-no')
+const output = document.querySelector('.result-grid')
 
 function randomColor(){
     let color = '#'
@@ -11,7 +12,7 @@ function randomColor(){
     }
     return color
 }
-randomColor()
+
 
 function createGrid(grids){
     
@@ -24,23 +25,22 @@ function createGrid(grids){
         divGrids.style.height=heightGrid
         divGrids.classList.add('newdivs')
         containerDiv.appendChild(divGrids)
-        divGrids.addEventListener('mouseover',()=>{
+        divGrids.addEventListener("mouseover",()=>{
             divGrids.style.opacity=opca
             opca+=0.1
             divGrids.style.backgroundColor=randomColor()
         })
+        
+            
     } 
 }
 
-button.addEventListener('click',()=>{
-    containerDiv.textContent=''
-    let nums = Number(prompt('Enter number of grids per side'))
-    if(nums>0 && nums<=100){
-        createGrid(nums)
-    }else{
-        alert('Enter a number between 1 and 100')
-    }
+input.addEventListener('click',(e)=>{
+    output.textContent = e.target.value
+    containerDiv.textContent = ''
+    createGrid(output.value)
 })
+
 
 document.addEventListener('DOMContentLoaded',()=>createGrid(16))
 
