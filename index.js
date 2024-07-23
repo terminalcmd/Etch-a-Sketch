@@ -35,7 +35,7 @@ function createGrid(grids){
     } 
 }
 
-input.addEventListener('click',(e)=>{
+input.addEventListener('input',(e)=>{
     output.textContent = e.target.value
     containerDiv.textContent = ''
     createGrid(output.value)
